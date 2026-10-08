@@ -1,27 +1,21 @@
 #include <iostream>
 #include <array>
+#include "model.hpp"
 #include "payoff.hpp"
 #include "aggregate.hpp"
+#include "engine.hpp"
+#include <cstdint>
 
 int main(){
-    const CallPayoff first{100.0} ; 
-    const CallPayoff second {110.0} ; 
-
-    double strike = 100.0 ; 
-    
-    const auto lambda_payoff = [&strike](double final_price) {
-        return call_payoff(final_price , strike) ; 
-    } ; 
-
-    std::cout << lambda_payoff(120.0) << "\n" ;
-
-    strike = 110.0 ; 
-    std::cout << lambda_payoff(120.0) << "\n" ;
-
-    const std::array<double, 4> prices{80.0, 100.0,120.0, 130.0} ; 
     const CallPayoff payoff{100.0} ; 
-
-    std::cout << sum_payoffs(prices, payoff) << "\n" ; 
+    const GbmParameters parameters{
+        .spot = 100.0,
+        .rate = 0.05,
+        .volatility = 0.20,
+        .maturity = 1.0
+    };
+    const std::uint64_t seed = 42;
+    std::cout << monte_carlo_price(parameters, payoff, 1000, seed) << "\n" ; 
 
     return 0 ;
 }

@@ -1,5 +1,5 @@
-#ifndef HPMC_PAYOFF_HPP
-#define HPMC_PAYOFF_HPP
+#ifndef HPMC_MODEL_HPP
+#define HPMC_MODEL_HPP
 #include <span>
 #include <vector>
 
