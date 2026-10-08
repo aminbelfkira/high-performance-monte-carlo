@@ -8,3 +8,5 @@
 *.dSYM/
 
 /CMakeUserPresets.json
+
+.clangd
