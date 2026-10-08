@@ -1,0 +1,10 @@
+/build/
+
+/AGENTS.md
+
+/monte_carlo
+
+.DS_Store
+*.dSYM/
+
+/CMakeUserPresets.json
