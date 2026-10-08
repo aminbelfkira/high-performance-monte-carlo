@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20)
+project(HighPerformanceMonteCarlo LANGUAGES CXX)
+add_executable(monte_carlo src/main.cpp)
+target_compile_features(monte_carlo PRIVATE cxx_std_20)
+set_target_properties(monte_carlo PROPERTIES CXX_EXTENSIONS OFF)
